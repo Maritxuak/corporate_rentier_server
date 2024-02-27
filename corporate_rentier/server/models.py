@@ -113,6 +113,7 @@ class FeedBack(models.Model):
     name_company = models.CharField(verbose_name='Компания', max_length=55)
     document = models.FileField(verbose_name='Техническое задание', upload_to='feedback/document/%Y/%m/%d/',
                                 blank=True, null=True)
+    dsc = models.TextField(verbose_name='Описание проекта', default='Не заполнено', null=True, blank=True)
     category = models.CharField(verbose_name='Категория услуги', blank=True, null=True, max_length=155)
     data = models.DateTimeField(verbose_name='Дата обращения', auto_created=True, auto_now=True)
     is_processed = models.BooleanField(verbose_name='Обработан', default=False)
