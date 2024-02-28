@@ -2,12 +2,6 @@ from rest_framework import serializers
 from .models import *
 
 
-
-
-
-
-
-
 class DignitiesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Dignities
@@ -17,7 +11,7 @@ class ServicesSerializer(serializers.ModelSerializer):
     included_in_the_service = DignitiesSerializer(many=True, read_only=True)
     class Meta:
         model = Services
-        fields = ['name', 'category', 'dsc', 'included_in_the_service']
+        fields = ['id', 'name', 'category', 'dsc', 'included_in_the_service']
 
 class DcsCatServicesSerializer(serializers.ModelSerializer):
     class Meta:
